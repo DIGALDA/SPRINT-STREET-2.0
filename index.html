@@ -1,0 +1,2704 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint Street - Магазин кроссовок</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-top">
+                <a href="#" class="logo" onclick="showPage('home')">SPRINT <span>STREET</span></a>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="active" onclick="showPage('home')">Главная</a></li>
+                        <li><a href="#" onclick="showPage('catalog')">Каталог</a></li>
+                        <li><a href="#" onclick="showPage('cart')">Корзина</a></li>
+                        <li><a href="#" onclick="showPage('account')" id="account-link">Личный кабинет</a></li>
+                    </ul>
+                </nav>
+                <div class="header-icons">
+                    <a href="#" onclick="showPage('account')"><i class="fas fa-user"></i></a>
+                    <a href="#" onclick="showPage('cart')">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Notification -->
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span id="notification-text"></span>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Page -->
+        <div id="home" class="page-content active">
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="container">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1 class="hero-title">Беговые кроссовки <span>премиум-класса</span> для настоящих ценителей</h1>
+                            <p class="hero-subtitle">Откройте для себя идеальное сочетание стиля, комфорта и технологий в каждой паре</p>
+                            <a href="#" class="hero-btn" onclick="showPage('catalog'); return false;">К покупкам</a>
+                        </div>
+                        <div class="hero-image">
+                            <img src="./img/гланая.jpg" alt="Premium Sneakers">
+                        </div>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2000+</div>
+                            <div class="stat-label">Довольных клиентов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Моделей обуви</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Брендов</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">Года на рынке</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Features Section -->
+            <section class="features">
+                <div class="container">
+                    <h2 class="section-title">Почему выбирают нас</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck"></i>
+                            </div>
+                            <h3 class="feature-title">Быстрая доставка</h3>
+                            <p class="feature-desc">Доставляем заказы по всей России за 2-7 дней</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3 class="feature-title">Гарантия качества</h3>
+                            <p class="feature-desc">Все товары являются оригинальной продукцией</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <h3 class="feature-title">Легкий возврат</h3>
+                            <p class="feature-desc">Возврат в течение 14 дней без лишних вопросов</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h3 class="feature-title">Поддержка 24/7</h3>
+                            <p class="feature-desc">Наша служба поддержки всегда готова помочь</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Products Section -->
+            <section class="container">
+                <h2 class="section-title">Хит продаж</h2>
+                <div class="products">
+                    <div class="product-card" onclick="showProductDetail('1')">
+                        <div class="product-image">
+                            <img src="./img/SAMBAE1.webp" alt="Adidas Sambae">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Adidas Sambae</h3>
+                            <p class="product-price">16 799 ₽</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" onclick="showProductDetail('2')">
+                        <div class="product-image">
+                            <img src="./img/Air Force 1 07-1.webp" alt="Nike Air Force 1 '07">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Nike Air Force 1 '07</h3>
+                            <p class="product-price">21 999 ₽</p>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card" onclick="showProductDetail('3')">
+                        <div class="product-image">
+                            <img src="./img/New Balance 740-1.webp" alt="New Balance 740">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">New Balance 740</h3>
+                            <p class="product-price">19 999 ₽</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </div>
+
+        <!-- Catalog Page -->
+        <div id="catalog" class="page-content">
+            <div class="container">
+                <h2 class="section-title">Каталог</h2>
+                <div class="catalog-container">
+                    <div class="filters">
+                        <div class="filter-group">
+                            <h3 class="filter-title">Пол</h3>
+                            <ul class="filter-options">
+                                <li><label><input type="checkbox" name="gender" value="male"> Мужское</label></li>
+                                <li><label><input type="checkbox" name="gender" value="female"> Женское</label></li>
+                                <li><label><input type="checkbox" name="gender" value="unisex"> Унисекс</label></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title">Бренд</h3>
+                            <ul class="filter-options">
+                                <li><label><input type="checkbox" name="brand" value="nike"> Nike</label></li>
+                                <li><label><input type="checkbox" name="brand" value="adidas"> Adidas</label></li>
+                                <li><label><input type="checkbox" name="brand" value="newbalance"> New Balance</label></li>
+                                <li><label><input type="checkbox" name="brand" value="puma"> Puma</label></li>
+                                <li><label><input type="checkbox" name="brand" value="reebok"> Reebok</label></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-title">Цена</h3>
+                            <div style="display: flex; flex-direction: column;">
+                                <input type="range" min="5000" max="50000" step="1000" value="50000" id="price-range" style="width: 100%; margin: 10px 0;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>5 000 ₽</span>
+                                    <span id="price-value">50 000 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="filter-actions">
+                            <button class="apply-filters" onclick="applyFilters()">Применить фильтры</button>
+                        </div>
+                    </div>
+                    
+                    <div class="catalog-products">
+                        <div class="products" id="catalog-products">
+                            <!-- 12 product cards -->
+                            <div class="product-card" data-gender="male" data-brand="adidas" data-price="16799" onclick="showProductDetail('1')">
+                                <div class="product-image">
+                                    <img src="./img/SAMBAE1.webp" alt="Adidas Sambae">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Adidas Sambae</h3>
+                                    <p class="product-price">16 799 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="unisex" data-brand="nike" data-price="21999" onclick="showProductDetail('2')">
+                                <div class="product-image">
+                                    <img src="./img/Air Force 1 07-1.webp" alt="Nike Air Force 1 '07">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Nike Air Force 1 '07</h3>
+                                    <p class="product-price">21 999 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="unisex" data-brand="newbalance" data-price="19999" onclick="showProductDetail('3')">
+                                <div class="product-image">
+                                    <img src="./img/New Balance 740-1.webp" alt="New Balance 740">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">New Balance 740</h3>
+                                    <p class="product-price">19 999 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="female" data-brand="nike" data-price="18499" onclick="showProductDetail('4')">
+                                <div class="product-image">
+                                    <img src="./img/Nike Full Force Low 1.webp" alt="Nike Red">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Nike Full Force Low</h3>
+                                    <p class="product-price">18 499 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="unisex" data-brand="adidas" data-price="15999" onclick="showProductDetail('5')">
+                                <div class="product-image">
+                                    <img src="./img/SUPERSTAR 1.webp" alt="Adidas Superstar">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Adidas Superstar</h3>
+                                    <p class="product-price">15 999 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="male" data-brand="nike" data-price="24999" onclick="showProductDetail('6')">
+                                <div class="product-image">
+                                    <img src="./img/Air Max Moto 2K Low-1.webp" alt="Jordan XI">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Air Max Moto 2K Low</h3>
+                                    <p class="product-price">24 999 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="male" data-brand="puma" data-price="17299" onclick="showProductDetail('7')">
+                                <div class="product-image">
+                                    <img src="./img/PUMA RS X -1.webp" alt="Puma RS-X">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Puma RS-X</h3>
+                                    <p class="product-price">17 299 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="male" data-brand="nike" data-price="22499" onclick="showProductDetail('8')">
+                                <div class="product-image">
+                                    <img src="./img/Nike Air Max1.webp" alt="Nike Air Max">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Nike Air Max</h3>
+                                    <p class="product-price">22 499 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="unisex" data-brand="adidas" data-price="20799" onclick="showProductDetail('9')">
+                                <div class="product-image">
+                                    <img src="./img/Adidas NMD1.webp" alt="Adidas NMD">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Adidas NMD</h3>
+                                    <p class="product-price">20 799 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="unisex" data-brand="reebok" data-price="16299" onclick="showProductDetail('10')">
+                                <div class="product-image">
+                                    <img src="./img/Reebok Classic1.webp" alt="Reebok Classic">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Reebok Classic</h3>
+                                    <p class="product-price">16 299 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="female" data-brand="newbalance" data-price="18899" onclick="showProductDetail('11')">
+                                <div class="product-image">
+                                    <img src="./img/New Balance 550-1.webp" alt="New Balance 550">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">New Balance 550</h3>
+                                    <p class="product-price">18 899 ₽</p>
+                                </div>
+                            </div>
+                            
+                            <div class="product-card" data-gender="female" data-brand="nike" data-price="19499" onclick="showProductDetail('12')">
+                                <div class="product-image">
+                                    <img src="./img/Nike Blazer1.webp" alt="Nike Blazer">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Nike Blazer</h3>
+                                    <p class="product-price">19 499 ₽</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Detail Pages -->
+        <div id="product-detail-1" class="page-content">
+            <div class="container">
+                <div class="product-detail">
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img id="main-product-image-1" src="./img/SAMBAE1.webp" alt="Adidas Sambae">
+                            <div class="gallery-nav">
+                                <div class="nav-arrow prev" onclick="navigateGallery(-1, '1')">
+                                    <i class="fas fa-chevron-left"></i>
+                                </div>
+                                <div class="nav-arrow next" onclick="navigateGallery(1, '1')">
+                                    <i class="fas fa-chevron-right"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="thumbnail-container">
+                            <div class="thumbnail active" onclick="changeImage(this, 'images/adidas-sambae.png', '1')">
+                                <img src="./img/SAMBAE1.webp" alt="Thumbnail 1">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage(this, 'images/adidas-sambae-side.png', '1')">
+                                <img src="./img/SAMBAE2.webp" alt="Thumbnail 2">
+                            </div>
+                            <div class="thumbnail" onclick="changeImage(this, 'images/adidas-sambae-detail.png', '1')">
+                                <img src="./img/SAMBAE3.webp" alt="Thumbnail 3">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="product-info-detail">
+                        <h1 id="product-detail-title-1">Adidas Sambae</h1>
+                        <p class="product-price-detail" id="product-detail-price-1">16 799 ₽</p>
+                        
+                        <div class="size-selector">
+                            <p class="size-title">Выберите размер:</p>
+                            <div class="sizes">
+                                <div class="size" onclick="selectSize(this)">37</div>
+                                <div class="size" onclick="selectSize(this)">38</div>
+                                <div class="size" onclick="selectSize(this)">39</div>
+                                <div class="size" onclick="selectSize(this)">40</div>
+                                <div class="size" onclick="selectSize(this)">41</div>
+                                <div class="size" onclick="selectSize(this)">42</div>
+                                <div class="size" onclick="selectSize(this)">43</div>
+                                <div class="size" onclick="selectSize(this)">44</div>
+                                <div class="size" onclick="selectSize(this)">45</div>
+                            </div>
+                        </div>
+                        
+                        <button class="add-to-cart" onclick="addToCart('1')">Добавить в корзину</button>
+                        
+                        <div class="product-description">
+                            <h3>Описание</h3>
+                            <p>Кроссовки Adidas Sambae сочетают в себе стиль и комфорт. Модель выполнена из высококачественных материалов, которые обеспечивают долговечность и удобность при носке. Подошва из этиленвинилацетата (EVA) обеспечивает амортизацию и поддержку стопы.</p>
+                            <p>Идеальный выбор для повседневной носки и активного образа жизни. Эти кроссовки подчеркнут ваш индивидуальный стиль и обеспечат комфорт в течение всего дня.</p>
+                        </div>
+                        
+                        <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                            <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <!-- Product Detail Page 2 -->
+<div id="product-detail-2" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-2" src="./img/Air Force 1 07-1.webp" alt="Nike Air Force 1 '07">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '2')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '2')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/nike-air-force.png', '2')">
+                        <img src="./img/Air Force 1 07-1.webp" alt="Nike Air Force 1 '07">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-air-force-side.png', '2')">
+                        <img src="./img/Air Force 1 07-2.webp" alt="Nike Air Force 1 '07 вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-air-force-detail.png', '2')">
+                        <img src="./img/Air Force 1 07-3.webp" alt="Nike Air Force 1 '07 детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-2">Nike Air Force 1 '07</h1>
+                <p class="product-price-detail" id="product-detail-price-2">21 999 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('2')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Культовые кроссовки Nike Air Force 1 '07 — это классика, которая никогда не выходит из моды. Модель выполнена из прочной кожи с перфорированными деталями для оптимальной вентиляции.</p>
+                    <p>Особенности: формованная промежуточная подошва для амортизации, классический низкий профиль и фирменная резиновая подошва с геометрическим рисунком для превосходного сцепления.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 3 -->
+<div id="product-detail-3" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-3" src="./img/New Balance 740-1.webp" alt="New Balance 740">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '3')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '3')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/new-balance-740.png', '3')">
+                        <img src="./img/New Balance 740-1.webp" alt="New Balance 740">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/new-balance-740-side.png', '3')">
+                        <img src="./img/New Balance 740-2.webp" alt="New Balance 740 вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/new-balance-740-detail.png', '3')">
+                        <img src="./img/New Balance 740-3.webp" alt="New Balance 740 детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-3">New Balance 740</h1>
+                <p class="product-price-detail" id="product-detail-price-3">19 999 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('3')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки New Balance 740 сочетают в себе классический стиль и современные технологии. Модель выполнена из дышащих материалов, которые обеспечивают комфорт в течение всего дня.</p>
+                    <p>Особенности: подошва из легкого полимера обеспечивает амортизацию и поддержку стопы, технология Fresh Foam для превосходной амортизации, сетчатый верх для оптимальной вентиляции.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 4 -->
+<div id="product-detail-4" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-4" src="./img/Nike Full Force Low 1.webp" alt="Nike Full Force Lo">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '4')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '4')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/nike-red.png', '4')">
+                        <img src="./img/Air Max Moto 2K Low-1.webp" alt="Nike Full Force Lo">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-red-side.png', '4')">
+                        <img src="./img/Air Max Moto 2K Low-2.webp" alt="Nike Full Force Lo вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-red-detail.png', '4')">
+                        <img src="./img/Air Max Moto 2K Low-3.webp" alt="Nike Full Force Lo детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-4">Nike Full Force Low</h1>
+                <p class="product-price-detail" id="product-detail-price-4">18 499 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('4')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки Nike Full Force Low сочетают в себе баскетбольное наследие и современный стиль. Изначально созданные для баскетбольных площадок, они сохранили свой культовый силуэт.</p>
+                    <p>Особенности: модель выполнена из высококачественной кожи и текстиля, усиленная подошва гарантирует отличное сцепление и амортизацию, узнаваемый крупный логотип Nike на боковой стороне.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 5 -->
+<div id="product-detail-5" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-5" src="./img/SUPERSTAR 1.webp" alt="Adidas Superstar">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '5')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '5')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/adidas-superstar.png', '5')">
+                        <img src="./img/SUPERSTAR 1.webp" alt="Adidas Superstar">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/adidas-superstar-side.png', '5')">
+                        <img src="./img/SUPERSTAR 2.webp" alt="Adidas Superstar вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/adidas-superstar-detail.png', '5')">
+                        <img src="./img/SUPERSTAR 3.webp" alt="Adidas Superstar детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-5">Adidas Superstar</h1>
+                <p class="product-price-detail" id="product-detail-price-5">15 999 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('5')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Культовые кроссовки Adidas Superstar сочетают в себе неподвластный времени стиль и современный комфорт. Модель выполнена из высококачественной кожи с знаменитым мыском-ракушкой.</p>
+                    <p>Особенности: классический низкий профиль, формованная подошва для амортизации, фирменные три полоски по бокам, резиновая подошва обеспечивает отличное сцепление с поверхностью.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 6 -->
+<div id="product-detail-6" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-6" src="./img/Air Max Moto 2K Low-1.webp" alt="Jordan XI">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '6')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '6')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/jordan-xi.png', '6')">
+                        <img src="./img/Air Max Moto 2K Low-1.webp" alt="Jordan XI">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/jordan-xi-side.png', '6')">
+                        <img src="./img/Air Max Moto 2K Low-2.webp" alt="Jordan XI вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/jordan-xi-detail.png', '6')">
+                        <img src="./img/Air Max Moto 2K Low-3.webp" alt="Jordan XI детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-6">Air Max Moto 2K Low</h1>
+                <p class="product-price-detail" id="product-detail-price-6">24 999 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('6')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки Air Max Moto 2K Low объединяют в себе ретро-футуристический дизайн и современный комфорт. Модель выполнена из комбинации высококачественных материалов, включая синтетическую кожу и дышащие текстильные вставки.</p>
+                    <p>Особенности: видимая технология Air-Sole в пятке для превосходной амортизации, вставки из гибкого пеноматериала для уникального стиля и дополнительной поддержки, прорезиненная подошва с геометрическим рисунком для надежного сцепления и фирменный дизайн с яркими акцентами.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 7 -->
+<div id="product-detail-7" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-7" src="./img/PUMA RS X -1.webp" alt="Puma RS-X">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '7')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '7')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/puma-rsx.png', '7')">
+                        <img src="./img/PUMA RS X -1.webp" alt="Puma RS-X">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/puma-rsx-side.png', '7')">
+                        <img src="./img/PUMA RS X -2.webp" alt="Puma RS-X вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/puma-rsx-detail.png', '7')">
+                        <img src="./img/PUMA RS X -3.webp" alt="Puma RS-X детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-7">Puma RS-X</h1>
+                <p class="product-price-detail" id="product-detail-price-7">17 299 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('7')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки Puma RS-X сочетают в себе ретро-футуристический дизайн и современные технологии. Модель выполнена из комбинации сетки, кожи и синтетических материалов.</p>
+                    <p>Особенности: инновационная система амортизации RS (Running System), многослойный верх с накладными элементами, текстурированная резиновая подошва для превосходного сцепления.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 8 -->
+<div id="product-detail-8" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-8" src="./img/Nike Air Max1.webp" alt="Nike Air Max">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '8')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '8')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/nike-air-max.png', '8')">
+                        <img src="./img/Nike Air Max1.webp" alt="Nike Air Max">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-air-max-side.png', '8')">
+                        <img src="./img/Nike Air Max2.webp" alt="Nike Air Max вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-air-max-detail.png', '8')">
+                        <img src="./img/Nike Air Max3.webp" alt="Nike Air Max детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-8">Nike Air Max</h1>
+                <p class="product-price-detail" id="product-detail-price-8">22 499 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('8')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки Nike Air Max сочетают в себе непревзойденный комфорт и культовый стиль. Модель оснащена видимой подушкой Air Max, которая обеспечивает максимальную амортизацию.</p>
+                    <p>Особенности: верх выполнен из легких дышащих материалов, резиновая подошва с протектором гарантирует отличное сцепление с различными поверхностями.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 9 -->
+<div id="product-detail-9" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-9" src="./img/Adidas NMD1.webp" alt="Adidas NMD">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '9')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '9')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/adidas-nmd.png', '9')">
+                        <img src="./img/Adidas NMD1.webp" alt="Adidas NMD">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/adidas-nmd-side.png', '9')">
+                        <img src="./img/Adidas NMD2.webp" alt="Adidas NMD вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/adidas-nmd-detail.png', '9')">
+                        <img src="./img/Adidas NMD3.webp" alt="Adidas NMD детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-9">Adidas NMD</h1>
+                <p class="product-price-detail" id="product-detail-price-9">20 799 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('9')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки Adidas NMD сочетают в себе современный стиль и инновационные технологии. Модель отличается уникальным дизайном с характерными цветными вставками в подошве.</p>
+                    <p>Особенности: технология Boost в подошве обеспечивает превосходную амортизацию и возврат энергии, легкий и дышащий материал верха адаптируется к форме стопы.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 10 -->
+<div id="product-detail-10" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-10" src="./img/Reebok Classic1.webp" alt="Reebok Classic">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '10')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '10')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/reebok-classic.png', '10')">
+                        <img src="./img/Reebok Classic1.webp" alt="Reebok Classic">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/reebok-classic-side.png', '10')">
+                        <img src="./img/Reebok Classic2.webp" alt="Reebok Classic вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/reebok-classic-detail.png', '10')">
+                        <img src="./img/Reebok Classic3.webp" alt="Reebok Classic детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-10">Reebok Classic</h1>
+                <p class="product-price-detail" id="product-detail-price-10">16 299 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('10')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки Reebok Classic — это классическая модель, которая уже несколько десятилетий остается на пике популярности. Модель выполнена из высококачественной кожи.</p>
+                    <p>Особенности: мягкая промежуточная подошва из этиленвинилацетата (EVA) обеспечивает отличную амортизацию и поддержку стопы, резиновая подошва гарантирует надежное сцепление.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 11 -->
+<div id="product-detail-11" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-11" src="./img/New Balance 550-1.webp" alt="New Balance 550">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '11')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '11')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/new-balance-550.png', '11')">
+                        <img src="./img/New Balance 550-1.webp" alt="New Balance 550">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/new-balance-550-side.png', '11')">
+                        <img src="./img/New Balance 550-2.webp" alt="New Balance 550 вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/new-balance-550-detail.png', '11')">
+                        <img src="./img/New Balance 550-3.webp" alt="New Balance 550 детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-11">New Balance 550</h1>
+                <p class="product-price-detail" id="product-detail-price-11">18 899 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('11')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки New Balance 550 сочетают в себе баскетбольную эстетику 80-х и современный комфорт. Модель выполнена из высококачественной кожи и замши.</p>
+                    <p>Особенности: подошва из этиленвинилацетата (EVA) обеспечивает превосходную амортизацию и поддержку стопы, узнаваемый силуэт с контрастными элементами и фирменным логотипом N.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Product Detail Page 12 -->
+<div id="product-detail-12" class="page-content">
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="main-product-image-12" src="./img/Nike Blazer1.webp" alt="Nike Blazer">
+                    <div class="gallery-nav">
+                        <div class="nav-arrow prev" onclick="navigateGallery(-1, '12')">
+                            <i class="fas fa-chevron-left"></i>
+                        </div>
+                        <div class="nav-arrow next" onclick="navigateGallery(1, '12')">
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="thumbnail-container">
+                    <div class="thumbnail active" onclick="changeImage(this, 'images/nike-blazer.png', '12')">
+                        <img src="./img/Nike Blazer1.webp" alt="Nike Blazer">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-blazer-side.png', '12')">
+                        <img src="./img/Nike Blazer2.webp" alt="Nike Blazer вид сбоку">
+                    </div>
+                    <div class="thumbnail" onclick="changeImage(this, 'images/nike-blazer-detail.png', '12')">
+                        <img src="./img/Nike Blazer3.webp" alt="Nike Blazer детали">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-info-detail">
+                <h1 id="product-detail-title-12">Nike Blazer</h1>
+                <p class="product-price-detail" id="product-detail-price-12">19 499 ₽</p>
+                
+                <div class="size-selector">
+                    <p class="size-title">Выберите размер:</p>
+                    <div class="sizes">
+                        <div class="size" onclick="selectSize(this)">37</div>
+                        <div class="size" onclick="selectSize(this)">38</div>
+                        <div class="size" onclick="selectSize(this)">39</div>
+                        <div class="size" onclick="selectSize(this)">40</div>
+                        <div class="size" onclick="selectSize(this)">41</div>
+                        <div class="size" onclick="selectSize(this)">42</div>
+                        <div class="size" onclick="selectSize(this)">43</div>
+                        <div class="size" onclick="selectSize(this)">44</div>
+                        <div class="size" onclick="selectSize(this)">45</div>
+                    </div>
+                </div>
+                
+                <button class="add-to-cart" onclick="addToCart('12')">Добавить в корзину</button>
+                
+                <div class="product-description">
+                    <h3>Описание</h3>
+                    <p>Кроссовки Nike Blazer сочетают в себе баскетбольное наследие и современный стиль. Изначально созданные для баскетбола в 1970-х годах, они сохранили свой культовый силуэт.</p>
+                    <p>Особенности: модель выполнена из высококачественной замши и текстиля, классическая резиновая подошва гарантирует отличное сцепление и амортизацию, узнаваемый крупный логотип Nike.</p>
+                </div>
+                
+                <a href="#" class="back-to-catalog" onclick="showPage('catalog')">
+                    <i class="fas fa-arrow-left"></i> Вернуться к каталогу
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Cart Page -->
+      <!-- Cart Page -->
+<div id="cart" class="page-content">
+    <div class="container">
+        <h2 class="section-title">Корзина</h2>
+        <div class="cart-container">
+            <div class="cart-items" id="cart-items">
+                <!-- Cart items will be added dynamically -->
+                <p class="empty-cart-message">Ваша корзина пуста</p>
+            </div>
+            
+            <div class="cart-summary">
+                <h3 class="summary-title">Итого</h3>
+                <div class="summary-item">
+                    <span>Товары (<span id="cart-items-count">0</span>)</span>
+                    <span id="cart-subtotal">0 ₽</span>
+                </div>
+                <div class="summary-item">
+                    <span>Доставка</span>
+                    <span id="cart-shipping">0 ₽</span>
+                </div>
+                <div class="summary-total">
+                    <span>Общая сумма</span>
+                    <span id="cart-total">0 ₽</span>
+                </div>
+                
+                <!-- Кнопки действий корзины -->
+                <div class="cart-actions">
+                    <button class="clear-cart-btn" onclick="clearCart()" id="clear-cart-btn" style="display: none;">
+                        <i class="fas fa-trash"></i> Очистить корзину
+                    </button>
+                    <button class="checkout-btn" onclick="checkout()">Оформить заказ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <!-- Account Page -->
+        <div id="account" class="page-content">
+            <div class="container">
+                <div class="auth-container" id="login-form">
+                    <h2 class="auth-title">Вход в личный кабинет</h2>
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Пароль</label>
+                            <input type="password" id="password" required>
+                        </div>
+                        <button type="button" onclick="login()">Войти</button>
+                    </form>
+                    <div class="auth-switch">
+                        Нет аккаунта? <a href="#" onclick="showRegisterForm()">Зарегистрироваться</a>
+                    </div>
+                </div>
+                
+                <div class="auth-container" id="register-form" style="display: none;">
+                    <h2 class="auth-title">Регистрация</h2>
+                    <form class="auth-form">
+                        <div class="form-group">
+                            <label for="reg-name">Имя</label>
+                            <input type="text" id="reg-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-email">Email</label>
+                            <input type="email" id="reg-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-password">Пароль</label>
+                            <input type="password" id="reg-password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-confirm">Подтвердите пароль</label>
+                            <input type="password" id="reg-confirm" required>
+                        </div>
+                        <button type="button" onclick="register()">Зарегистрироваться</button>
+                    </form>
+                    <div class="auth-switch">
+                        Уже есть аккаунт? <a href="#" onclick="showLoginForm()">Войти</a>
+                    </div>
+                </div>
+
+                <!-- User Profile Page (hidden by default) -->
+                <div class="profile-container" id="user-profile" style="display: none;">
+                    <div class="profile-sidebar">
+                        <div class="profile-info">
+                            <div class="profile-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <h3 class="profile-name" id="profile-name">Иван Иванов</h3>
+                            <p class="profile-email" id="profile-email">ivan@example.com</p>
+                        </div>
+                        <ul class="profile-menu">
+                            <li><a href="#" class="active" onclick="showProfileSection('orders')">Мои заказы</a></li>
+                            <li><a href="#" onclick="showProfileSection('personal')">Личные данные</a></li>
+                            <li><a href="#" onclick="showProfileSection('addresses')">Адреса доставки</a></li>
+                            <li><a href="#" onclick="logout()">Выйти</a></li>
+                        </ul>
+                    </div>
+                    <div class="profile-content">
+                        <div class="profile-section active" id="orders-section">
+                            <h2>История заказов</h2>
+                            <table class="order-history">
+                                <thead>
+                                    <tr>
+                                        <th>Номер заказа</th>
+                                        <th>Дата</th>
+                                        <th>Сумма</th>
+                                        <th>Статус</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="orders-list">
+                                    <!-- Orders will be populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                      <div class="profile-section" id="personal-section">
+    <h2>Личные данные</h2>
+    <form class="auth-form">
+        <div class="form-group">
+            <label for="profile-firstname">Имя</label>
+            <input type="text" id="profile-firstname" placeholder="Введите ваше имя">
+        </div>
+        <div class="form-group">
+            <label for="profile-lastname">Фамилия</label>
+            <input type="text" id="profile-lastname" placeholder="Введите вашу фамилию">
+        </div>
+        <div class="form-group">
+            <label for="profile-email">Email</label>
+            <input type="email" id="profile-email" placeholder="Введите ваш email">
+        </div>
+        <div class="form-group">
+            <label for="profile-phone">Телефон</label>
+            <input type="tel" id="profile-phone" placeholder="+7 (XXX) XXX-XX-XX">
+        </div>
+        
+        <button type="button" onclick="saveProfileChanges()">Сохранить изменения</button>
+    </form>
+</div>
+                        <div class="profile-section" id="addresses-section">
+    <h2>Адреса доставки</h2>
+    
+    <!-- Форма добавления/редактирования адреса -->
+    <div class="address-form-container" id="address-form-container" style="display: none;">
+        <h3 id="address-form-title">Добавить новый адрес</h3>
+        <form class="auth-form" id="address-form">
+            <input type="hidden" id="edit-address-index">
+            <div class="form-group">
+                <label for="address-name">Название адреса</label>
+                <input type="text" id="address-name" placeholder="Например: Дом, Работа" required>
+            </div>
+            <div class="form-group">
+                <label for="address-country">Страна</label>
+                <input type="text" id="address-country" value="Россия" required>
+            </div>
+            <div class="form-group">
+                <label for="address-city">Город</label>
+                <input type="text" id="address-city" placeholder="Введите город" required>
+            </div>
+            <div class="form-group">
+                <label for="address-street">Улица</label>
+                <input type="text" id="address-street" placeholder="Введите улицу" required>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="address-house">Дом</label>
+                    <input type="text" id="address-house" placeholder="Номер дома" required>
+                </div>
+                <div class="form-group">
+                    <label for="address-apartment">Квартира/Офис</label>
+                    <input type="text" id="address-apartment" placeholder="Номер квартиры">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="address-zip">Почтовый индекс</label>
+                <input type="text" id="address-zip" placeholder="Почтовый индекс">
+            </div>
+            <div class="form-group">
+                <label for="address-phone">Телефон для доставки</label>
+                <input type="tel" id="address-phone" placeholder="+7 (XXX) XXX-XX-XX" required>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="address-default"> Сделать основным адресом
+                </label>
+            </div>
+            <div class="form-actions">
+                <button type="button" onclick="saveAddress()">Сохранить адрес</button>
+                <button type="button" class="cancel-btn" onclick="cancelEditAddress()">Отмена</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Список адресов -->
+    <div class="addresses-list" id="addresses-list">
+        <!-- Адреса будут добавляться динамически -->
+    </div>
+
+    <!-- Кнопка добавления нового адреса -->
+    <div class="add-address-btn-container">
+        <button class="add-address-btn" onclick="showAddAddressForm()">
+            <i class="fas fa-plus"></i> Добавить новый адрес
+        </button>
+    </div>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+  <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>О нас</h3>
+                <p>Sprint Street - это магазин качественных кроссовок от ведущих мировых брендов. Мы предлагаем только оригинальную продукцию с гарантией качества.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Контакты</h3>
+                <p>г. Красноярск, ул. Мира 70</p>
+                <p>+7 (495) 123-45-67</p>
+                <p>info@sprintstreet.ru</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Мы в соцсетях</h3>
+                <a href="#"><i class="fab fa-vk"></i> ВКонтакте</a>
+                <a href="#"><i class="fab fa-telegram"></i> Telegram</a>
+                <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sprint Street. Все права защищены.</p>
+        </div>
+    </div>
+</footer>
+
+
+ <script>
+    // Cart functionality
+    let cart = [];
+    let cartCount = document.querySelector('.cart-count');
+    let isLoggedIn = false;
+    let currentUser = null;
+    let userOrders = [];
+    
+    // Product data with image arrays
+    const products = {
+        '1': {
+            name: 'Adidas Sambae',
+            price: '16 799 ₽',
+            priceValue: 16799,
+            images: [
+                './img/SAMBAE1.webp',
+                './img/SAMBAE2.webp',
+                './img/SAMBAE3.webp'
+            ],
+            description: 'Кроссовки Adidas Sambae сочетают в себе стиль и комфорт. Модель выполнена из высококачественных материалов, которые обеспечивают долговечность и удобность при носке. Подошва из этиленвинилацетата (EVA) обеспечивает амортизацию и поддержку стопы. Идеальный выбор для повседневной носки и активного образа жизни. Эти кроссовки подчеркнут ваш индивидуальный стиль и обеспечат комфорт в течение всего дня.'
+        },
+        '2': {
+            name: 'Nike Air Force 1 \'07',
+            price: '21 999 ₽',
+            priceValue: 21999,
+            images: [
+                './img/Air Force 1 07-1.webp',
+                './img/Air Force 1 07-2.webp',
+                './img/Air Force 1 07-3.webp'
+            ],
+            description: 'Культовые кроссовки Nike Air Force 1 \'07 — это классика, которая никогда не выходит из моды. Модель выполнена из прочной кожи с перфорированными деталями для оптимальной вентиляции. Особенности: формованная промежуточная подошва для амортизации, классический низкий профиль и фирменная резиновая подошва с геометрическим рисунком для превосходного сцепления.'
+        },
+        '3': {
+            name: 'New Balance 740',
+            price: '19 999 ₽',
+            priceValue: 19999,
+            images: [
+                './img/New Balance 740-1.webp',
+                './img/New Balance 740-2.webp',
+                './img/New Balance 740-3.webp'
+            ],
+            description: 'Кроссовки New Balance 740 сочетают в себе классический стиль и современные технологии. Модель выполнена из дышащих материалов, которые обеспечивают комфорт в течение всего дня. Особенности: подошва из легкого полимера обеспечивает амортизацию и поддержку стопы, технология Fresh Foam для превосходной амортизации, сетчатый верх для оптимальной вентиляции.'
+        },
+        '4': {
+            name: 'Nike Full Force Low',
+            price: '18 499 ₽',
+            priceValue: 18499,
+            images: [
+                './img/Nike Full Force Low 1.webp',
+                './img/Nike Full Force Low 2.webp',
+                './img/Nike Full Force Low 3.webp'
+            ],
+            description: 'Кроссовки Nike Full Force Low сочетают в себе баскетбольное наследие и современный стиль. Изначально созданные для баскетбольных площадок, они сохранили свой культовый силуэт. Особенности: модель выполнена из высококачественной кожи и текстиля, усиленная подошва гарантирует отличное сцепление и амортизацию, узнаваемый крупный логотип Nike на боковой стороне.'
+        },
+        '5': {
+            name: 'Adidas Superstar',
+            price: '15 999 ₽',
+            priceValue: 15999,
+            images: [
+                './img/SUPERSTAR 1.webp',
+                './img/SUPERSTAR 2.webp',
+                './img/SUPERSTAR 3.webp'
+            ],
+            description: 'Культовые кроссовки Adidas Superstar сочетают в себе неподвластный времени стиль и современный комфорт. Модель выполнена из высококачественной кожи с знаменитым мыском-ракушкой. Особенности: классический низкий профиль, формованная подошва для амортизации, фирменные три полоски по бокам, резиновая подошва обеспечивает отличное сцепление с поверхностью.'
+        },
+        '6': {
+            name: 'Air Max Moto 2K Low',
+            price: '24 999 ₽',
+            priceValue: 24999,
+            images: [
+                './img/Air Max Moto 2K Low-1.webp',
+                './img/Air Max Moto 2K Low-2.webp',
+                './img/Air Max Moto 2K Low-3.webp'
+            ],
+            description: 'Кроссовки Air Max Moto 2K Low объединяют в себе ретро-футуристический дизайн и современный комфорт. Модель выполнена из комбинации высококачественных материалов, включая синтетическую кожу и дышащие текстильные вставки. Особенности: видимая технология Air-Sole в пятке для превосходной амортизации, вставки из гибкого пеноматериала для уникального стиля и дополнительной поддержки, прорезиненная подошва с геометрическим рисунком для надежного сцепления и фирменный дизайн с яркими акцентами.'
+        },
+        '7': {
+            name: 'Puma RS-X',
+            price: '17 299 ₽',
+            priceValue: 17299,
+            images: [
+                './img/PUMA RS X -1.webp',
+                './img/PUMA RS X -2.webp',
+                './img/PUMA RS X -3.webp'
+            ],
+            description: 'Кроссовки Puma RS-X сочетают в себе ретро-футуристический дизайн и современные технологии. Модель выполнена из комбинации сетки, кожи и синтетических материалов. Особенности: инновационная система амортизации RS (Running System), многослойный верх с накладными элементами, текстурированная резиновая подошва для превосходного сцепления.'
+        },
+        '8': {
+            name: 'Nike Air Max',
+            price: '22 499 ₽',
+            priceValue: 22499,
+            images: [
+                './img/Nike Air Max1.webp',
+                './img/Nike Air Max2.webp',
+                './img/Nike Air Max3.webp'
+            ],
+            description: 'Кроссовки Nike Air Max сочетают в себе непревзойденный комфорт и культовый стиль. Модель оснащена видимой подушкой Air Max, которая обеспечивает максимальную амортизацию. Особенности: верх выполнен из легких дышащих материалов, резиновая подошва с протектором гарантирует отличное сцепление с различными поверхностями.'
+        },
+        '9': {
+            name: 'Adidas NMD',
+            price: '20 799 ₽',
+            priceValue: 20799,
+            images: [
+                './img/Adidas NMD1.webp',
+                './img/Adidas NMD2.webp',
+                './img/Adidas NMD3.webp'
+            ],
+            description: 'Кроссовки Adidas NMD сочетают в себе современный стиль и инновационные технологии. Модель отличается уникальным дизайном с характерными цветными вставками в подошве. Особенности: технология Boost в подошве обеспечивает превосходную амортизацию и возврат энергии, легкий и дышащий материал верха адаптируется к форме стопы.'
+        },
+        '10': {
+            name: 'Reebok Classic',
+            price: '16 299 ₽',
+            priceValue: 16299,
+            images: [
+                './img/Reebok Classic1.webp',
+                './img/Reebok Classic2.webp',
+                './img/Reebok Classic3.webp'
+            ],
+            description: 'Кроссовки Reebok Classic — это классическая модель, которая уже несколько десятилетий остается на пике популярности. Модель выполнена из высококачественной кожи. Особенности: мягкая промежуточная подошва из этиленвинилацетата (EVA) обеспечивает отличную амортизацию и поддержку стопы, резиновая подошва гарантирует надежное сцепление.'
+        },
+        '11': {
+            name: 'New Balance 550',
+            price: '18 899 ₽',
+            priceValue: 18899,
+            images: [
+                './img/New Balance 550-1.webp',
+                './img/New Balance 550-2.webp',
+                './img/New Balance 550-3.webp'
+            ],
+            description: 'Кроссовки New Balance 550 сочетают в себе баскетбольную эстетику 80-х и современный комфорт. Модель выполнена из высококачественной кожи и замши. Особенности: подошва из этиленвинилацетата (EVA) обеспечивает превосходную амортизацию и поддержку стопы, узнаваемый силуэт с контрастными элементами и фирменным логотипом N.'
+        },
+        '12': {
+            name: 'Nike Blazer',
+            price: '19 499 ₽',
+            priceValue: 19499,
+            images: [
+                './img/Nike Blazer1.webp',
+                './img/Nike Blazer2.webp',
+                './img/Nike Blazer3.webp'
+            ],
+            description: 'Кроссовки Nike Blazer сочетают в себе баскетбольное наследие и современный стиль. Изначально созданные для баскетбола в 1970-х годах, они сохранили свой культовый силуэт. Особенности: модель выполнена из высококачественной замши и текстиля, классическая резиновая подошва гарантирует отличное сцепление и амортизацию, узнаваемый крупный логотип Nike.'
+        }
+    };
+
+    // Current image index for each product
+    const currentImageIndex = {};
+
+    // Initialize price range slider
+    const priceRange = document.getElementById('price-range');
+    const priceValue = document.getElementById('price-value');
+    
+    priceRange.addEventListener('input', function() {
+        priceValue.textContent = this.value + ' ₽';
+    });
+    
+    // Show specific page
+    function showPage(pageId) {
+        document.querySelectorAll('.page-content').forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        document.querySelectorAll('nav a').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        document.getElementById(pageId).classList.add('active');
+        
+        // Update active link in navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            if (link.textContent.toLowerCase().includes(pageId.toLowerCase())) {
+                link.classList.add('active');
+            }
+        });
+        
+        // If cart page, update cart display
+        if (pageId === 'cart') {
+            updateCartDisplay();
+        }
+        
+        // If account page and user is logged in, show profile
+        if (pageId === 'account' && isLoggedIn) {
+            showUserProfile();
+        }
+    }
+    
+    // Show product detail page
+    function showProductDetail(productId) {
+        // Initialize current image index for this product
+        if (!currentImageIndex[productId]) {
+            currentImageIndex[productId] = 0;
+        }
+        
+        // Update product information
+        const product = products[productId];
+        if (product) {
+            document.getElementById('product-detail-title-' + productId).textContent = product.name;
+            document.getElementById('product-detail-price-' + productId).textContent = product.price;
+            
+            // Update main image
+            const mainImage = document.getElementById('main-product-image-' + productId);
+            mainImage.src = product.images[currentImageIndex[productId]];
+            
+            // Update thumbnails
+            const thumbnailContainer = document.querySelector('#product-detail-' + productId + ' .thumbnail-container');
+            if (thumbnailContainer) {
+                thumbnailContainer.innerHTML = '';
+                
+                product.images.forEach((image, index) => {
+                    const thumbnail = document.createElement('div');
+                    thumbnail.className = `thumbnail ${index === currentImageIndex[productId] ? 'active' : ''}`;
+                    thumbnail.onclick = () => changeImage(thumbnail, image, productId, index);
+                    
+                    const img = document.createElement('img');
+                    img.src = image;
+                    img.alt = `Thumbnail ${index + 1}`;
+                    
+                    thumbnail.appendChild(img);
+                    thumbnailContainer.appendChild(thumbnail);
+                });
+            }
+            
+            // Update description if needed
+            const descriptionElement = document.querySelector('#product-detail-' + productId + ' .product-description p');
+            if (descriptionElement && product.description) {
+                descriptionElement.textContent = product.description;
+            }
+        }
+        
+        showPage('product-detail-' + productId);
+    }
+    
+    // Change product image in gallery
+    function changeImage(thumbnail, imageUrl, productId, imageIndex) {
+        document.getElementById('main-product-image-' + productId).src = imageUrl;
+        
+        // Update current image index
+        currentImageIndex[productId] = imageIndex;
+        
+        // Update active thumbnail
+        const thumbnails = thumbnail.parentElement.querySelectorAll('.thumbnail');
+        thumbnails.forEach(thumb => {
+            thumb.classList.remove('active');
+        });
+        
+        thumbnail.classList.add('active');
+    }
+    
+    // Navigate gallery with arrows
+    function navigateGallery(direction, productId) {
+        const product = products[productId];
+        if (!product) return;
+        
+        // Update current image index
+        currentImageIndex[productId] += direction;
+        
+        // Loop around if out of bounds
+        if (currentImageIndex[productId] < 0) {
+            currentImageIndex[productId] = product.images.length - 1;
+        } else if (currentImageIndex[productId] >= product.images.length) {
+            currentImageIndex[productId] = 0;
+        }
+        
+        // Update main image
+        const mainImage = document.getElementById('main-product-image-' + productId);
+        mainImage.src = product.images[currentImageIndex[productId]];
+        
+        // Update active thumbnail
+        const thumbnails = document.querySelectorAll('#product-detail-' + productId + ' .thumbnail');
+        thumbnails.forEach((thumb, index) => {
+            thumb.classList.toggle('active', index === currentImageIndex[productId]);
+        });
+    }
+    
+    // Add keyboard navigation for gallery
+    document.addEventListener('keydown', function(event) {
+        const activeProductDetail = document.querySelector('.page-content.active[id^="product-detail-"]');
+        if (activeProductDetail) {
+            const productId = activeProductDetail.id.split('-')[2];
+            
+            if (event.key === 'ArrowLeft') {
+                navigateGallery(-1, productId);
+            } else if (event.key === 'ArrowRight') {
+                navigateGallery(1, productId);
+            }
+        }
+    });
+    
+    // Add swipe support for mobile devices
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    document.addEventListener('touchstart', function(event) {
+        touchStartX = event.changedTouches[0].screenX;
+    });
+    
+    document.addEventListener('touchend', function(event) {
+        touchEndX = event.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const activeProductDetail = document.querySelector('.page-content.active[id^="product-detail-"]');
+        if (activeProductDetail) {
+            const productId = activeProductDetail.id.split('-')[2];
+            
+            if (touchEndX < touchStartX - 50) {
+                // Swipe left - next image
+                navigateGallery(1, productId);
+            } else if (touchEndX > touchStartX + 50) {
+                // Swipe right - previous image
+                navigateGallery(-1, productId);
+            }
+        }
+    }
+    
+    // Select size
+    function selectSize(sizeElement) {
+        const sizes = sizeElement.parentElement.querySelectorAll('.size');
+        sizes.forEach(size => {
+            size.classList.remove('selected');
+        });
+        
+        sizeElement.classList.add('selected');
+    }
+    
+    // Add to cart
+    function addToCart(productId) {
+        const selectedSize = document.querySelector('#product-detail-' + productId + ' .size.selected');
+        if (!selectedSize) {
+            showNotification('Пожалуйста, выберите размер', 'error');
+            return;
+        }
+        
+        const product = products[productId];
+        const cartProduct = {
+            id: Date.now(), // unique id for cart item
+            name: product.name,
+            price: product.price,
+            priceValue: product.priceValue,
+            size: selectedSize.textContent,
+            image: product.images[0], // Use first image for cart
+            quantity: 1
+        };
+        
+        cart.push(cartProduct);
+        updateCartCount();
+        showNotification('Товар добавлен в корзину!', 'success');
+    }
+    
+    // Update cart count
+    function updateCartCount() {
+        cartCount.textContent = cart.length;
+    }
+    
+    // Update cart display
+    function updateCartDisplay() {
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartItemsCount = document.getElementById('cart-items-count');
+        const cartSubtotal = document.getElementById('cart-subtotal');
+        const cartShipping = document.getElementById('cart-shipping');
+        const cartTotal = document.getElementById('cart-total');
+        
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = '<p class="empty-cart-message">Ваша корзина пуста</p>';
+            cartItemsCount.textContent = '0';
+            cartSubtotal.textContent = '0 ₽';
+            cartShipping.textContent = '0 ₽';
+            cartTotal.textContent = '0 ₽';
+            return;
+        }
+        
+        let cartHTML = '';
+        let subtotal = 0;
+        
+        cart.forEach(item => {
+            subtotal += item.priceValue;
+            
+            cartHTML += `
+                <div class="cart-item">
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <h3>${item.name}</h3>
+                        <p>Размер: ${item.size}</p>
+                        <p class="cart-item-price">${item.price}</p>
+                    </div>
+                    <div class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+            `;
+        });
+        
+        // Calculate shipping (free for orders over 5000 rubles)
+        const shipping = subtotal > 5000 ? 0 : 500;
+        
+        cartItemsContainer.innerHTML = cartHTML;
+        cartItemsCount.textContent = cart.length;
+        cartSubtotal.textContent = subtotal.toLocaleString() + ' ₽';
+        cartShipping.textContent = shipping.toLocaleString() + ' ₽';
+        cartTotal.textContent = (subtotal + shipping).toLocaleString() + ' ₽';
+    }
+    
+    // Remove from cart
+    function removeFromCart(productId) {
+        cart = cart.filter(item => item.id !== productId);
+        updateCartCount();
+        updateCartDisplay();
+        showNotification('Товар удален из корзины', 'success');
+    }
+    
+    // Show notification
+    function showNotification(message, type = 'success') {
+        const notification = document.getElementById('notification');
+        const notificationText = document.getElementById('notification-text');
+        
+        notificationText.textContent = message;
+        notification.className = `notification ${type}`;
+        notification.classList.add('show');
+        
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 3000);
+    }
+    
+    // Checkout function
+    function checkout() {
+        if (cart.length === 0) {
+            showNotification('Ваша корзина пуста', 'error');
+            return;
+        }
+        
+        if (!isLoggedIn) {
+            showNotification('Пожалуйста, войдите в систему для оформления заказа', 'error');
+            showPage('account');
+            return;
+        }
+        
+        // Create order
+        const order = {
+            id: 'ORD' + Date.now(),
+            date: new Date().toLocaleDateString('ru-RU'),
+            items: [...cart],
+            total: document.getElementById('cart-total').textContent,
+            status: 'В обработке'
+        };
+        
+        // Add to user's orders
+        userOrders.push(order);
+        
+        // Clear cart
+        cart = [];
+        updateCartCount();
+        updateCartDisplay();
+        
+        // Show success message
+        showNotification('Заказ успешно оформлен!', 'success');
+        
+        // Update orders list if on profile page
+        if (document.getElementById('orders-section').classList.contains('active')) {
+            updateOrdersList();
+        }
+    }
+    
+    // Update orders list in profile
+    function updateOrdersList() {
+        const ordersList = document.getElementById('orders-list');
+        
+        if (userOrders.length === 0) {
+            ordersList.innerHTML = '<tr><td colspan="4" style="text-align: center;">У вас пока нет заказов</td></tr>';
+            return;
+        }
+        
+        let ordersHTML = '';
+        
+        userOrders.forEach(order => {
+            ordersHTML += `
+                <tr>
+                    <td>${order.id}</td>
+                    <td>${order.date}</td>
+                    <td>${order.total}</td>
+                    <td>${order.status}</td>
+                </tr>
+            `;
+        });
+        
+        ordersList.innerHTML = ordersHTML;
+    }
+    
+    // Show login form
+    function showLoginForm() {
+        document.getElementById('login-form').style.display = 'block';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('user-profile').style.display = 'none';
+    }
+    
+    // Show register form
+    function showRegisterForm() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'block';
+        document.getElementById('user-profile').style.display = 'none';
+    }
+    
+    // Show user profile
+    function showUserProfile() {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+        document.getElementById('user-profile').style.display = 'grid';
+        updateOrdersList();
+    }
+    
+    // Show profile section
+    function showProfileSection(sectionId) {
+        document.querySelectorAll('.profile-section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId + '-section').classList.add('active');
+        
+        document.querySelectorAll('.profile-menu a').forEach(link => {
+            link.classList.remove('active');
+        });
+        event.target.classList.add('active');
+        
+        if (sectionId === 'orders') {
+            updateOrdersList();
+        }
+    }
+    
+    // Login function
+    function login() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        if (email && password) {
+            isLoggedIn = true;
+            currentUser = {
+                name: 'Иван Иванов',
+                email: email
+            };
+            
+            document.getElementById('profile-name').textContent = currentUser.name;
+            document.getElementById('profile-email').textContent = currentUser.email;
+            
+            showUserProfile();
+            updateAccountLink();
+            showNotification('Вы успешно вошли в систему', 'success');
+        } else {
+            showNotification('Пожалуйста, заполните все поля', 'error');
+        }
+    }
+// Register function
+function register() {
+    const name = document.getElementById('reg-name').value;
+    const email = document.getElementById('reg-email').value;
+    const password = document.getElementById('reg-password').value;
+    const confirm = document.getElementById('reg-confirm').value;
+    
+    if (!name || !email || !password || !confirm) {
+        showNotification('Пожалуйста, заполните все поля', 'error');
+        return;
+    }
+    
+    if (password !== confirm) {
+        showNotification('Пароли не совпадают', 'error');
+        return;
+    }
+    
+    isLoggedIn = true;
+    currentUser = {
+        name: name,
+        email: email,
+        password: password, // Сохраняем пароль (в реальном приложении нужно хэшировать!)
+        registrationDate: new Date().toLocaleDateString('ru-RU')
+    };
+    
+    // Сохраняем пользователя в localStorage
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    
+    document.getElementById('profile-name').textContent = currentUser.name;
+    document.getElementById('profile-email').textContent = currentUser.email;
+    
+    // Заполняем поля в профиле данными из регистрации
+    document.getElementById('profile-firstname').value = name.split(' ')[0] || name;
+    document.getElementById('profile-lastname').value = name.split(' ')[1] || '';
+    document.getElementById('profile-email').value = email;
+    
+    showUserProfile();
+    updateAccountLink();
+    showNotification('Регистрация прошла успешно', 'success');
+}
+
+// Функция для загрузки данных пользователя при входе
+function loadUserData() {
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+        currentUser = JSON.parse(savedUser);
+        isLoggedIn = true;
+        
+        // Заполняем поля профиля сохраненными данными
+        document.getElementById('profile-name').textContent = currentUser.name;
+        document.getElementById('profile-email').textContent = currentUser.email;
+        document.getElementById('profile-firstname').value = currentUser.name.split(' ')[0] || currentUser.name;
+        document.getElementById('profile-lastname').value = currentUser.name.split(' ')[1] || '';
+        document.getElementById('profile-email').value = currentUser.email;
+        
+        // Загружаем заказы
+        const savedOrders = localStorage.getItem('userOrders');
+        if (savedOrders) {
+            userOrders = JSON.parse(savedOrders);
+        }
+        
+        updateAccountLink();
+    }
+}
+
+// Обновленная функция для сохранения заказов
+function checkout() {
+    if (cart.length === 0) {
+        showNotification('Ваша корзина пуста', 'error');
+        return;
+    }
+    
+    if (!isLoggedIn) {
+        showNotification('Пожалуйста, войдите в систему для оформления заказа', 'error');
+        showPage('account');
+        return;
+    }
+    
+    // Create order
+    const order = {
+        id: 'ORD' + Date.now(),
+        date: new Date().toLocaleDateString('ru-RU'),
+        items: [...cart],
+        total: document.getElementById('cart-total').textContent,
+        status: 'В обработке'
+    };
+    
+    // Add to user's orders
+    userOrders.push(order);
+    
+    // Сохраняем заказы в localStorage
+    localStorage.setItem('userOrders', JSON.stringify(userOrders));
+    
+    // Clear cart
+    cart = [];
+    updateCartCount();
+    updateCartDisplay();
+    
+    // Show success message
+    showNotification('Заказ успешно оформлен!', 'success');
+    
+    // Update orders list if on profile page
+    if (document.getElementById('orders-section').classList.contains('active')) {
+        updateOrdersList();
+    }
+}
+
+// Функция для сохранения изменений профиля
+function saveProfileChanges() {
+    if (!currentUser) return;
+    
+    const firstName = document.getElementById('profile-firstname').value;
+    const lastName = document.getElementById('profile-lastname').value;
+    const email = document.getElementById('profile-email').value;
+    const phone = document.getElementById('profile-phone').value;
+    
+    // Обновляем данные пользователя
+    currentUser.name = `${firstName} ${lastName}`.trim();
+    currentUser.email = email;
+    currentUser.phone = phone;
+    
+    // Сохраняем в localStorage
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    
+    // Обновляем отображение
+    document.getElementById('profile-name').textContent = currentUser.name;
+    document.getElementById('profile-email').textContent = currentUser.email;
+    
+    showNotification('Данные успешно сохранены', 'success');
+}
+
+// Добавляем обработчик сохранения профиля
+document.addEventListener('DOMContentLoaded', function() {
+    // Загружаем данные пользователя при загрузке страницы
+    loadUserData();
+    
+    // Добавляем кнопку сохранения в раздел личных данных
+    const personalSection = document.getElementById('personal-section');
+    const saveButton = personalSection.querySelector('button');
+    saveButton.onclick = saveProfileChanges;
+});
+    
+    // Logout function
+    function logout() {
+        isLoggedIn = false;
+        currentUser = null;
+        showLoginForm();
+        updateAccountLink();
+        showNotification('Вы вышли из системы', 'success');
+    }
+    
+    // Update account link text
+    function updateAccountLink() {
+        const accountLink = document.getElementById('account-link');
+        if (isLoggedIn) {
+            accountLink.textContent = 'Мой профиль';
+        } else {
+            accountLink.textContent = 'Личный кабинет';
+        }
+    }
+    
+    // Apply filters in catalog
+    function applyFilters() {
+        const selectedGenders = Array.from(document.querySelectorAll('input[name="gender"]:checked')).map(cb => cb.value);
+        const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(cb => cb.value);
+        const maxPrice = parseInt(document.getElementById('price-range').value);
+        
+        const productCards = document.querySelectorAll('.product-card');
+        
+        productCards.forEach(card => {
+            const gender = card.getAttribute('data-gender');
+            const brand = card.getAttribute('data-brand');
+            const price = parseInt(card.getAttribute('data-price'));
+            
+            const genderMatch = selectedGenders.length === 0 || selectedGenders.includes(gender);
+            const brandMatch = selectedBrands.length === 0 || selectedBrands.includes(brand);
+            const priceMatch = price <= maxPrice;
+            
+            if (genderMatch && brandMatch && priceMatch) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+
+
+
+    // Функции для работы с адресами доставки
+function showAddAddressForm() {
+    document.getElementById('address-form-container').style.display = 'block';
+    document.getElementById('address-form-title').textContent = 'Добавить новый адрес';
+    document.getElementById('address-form').reset();
+    document.getElementById('edit-address-index').value = '';
+    document.getElementById('address-phone').value = currentUser?.phone || '';
+    
+    // Прокрутка к форме
+    document.getElementById('address-form-container').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+function cancelEditAddress() {
+    document.getElementById('address-form-container').style.display = 'none';
+    document.getElementById('address-form').reset();
+}
+
+function saveAddress() {
+    const addressData = {
+        name: document.getElementById('address-name').value,
+        country: document.getElementById('address-country').value,
+        city: document.getElementById('address-city').value,
+        street: document.getElementById('address-street').value,
+        house: document.getElementById('address-house').value,
+        apartment: document.getElementById('address-apartment').value,
+        zip: document.getElementById('address-zip').value,
+        phone: document.getElementById('address-phone').value,
+        isDefault: document.getElementById('address-default').checked
+    };
+
+    // Валидация
+    if (!addressData.name || !addressData.city || !addressData.street || !addressData.house) {
+        showNotification('Пожалуйста, заполните все обязательные поля', 'error');
+        return;
+    }
+
+    const editIndex = document.getElementById('edit-address-index').value;
+    
+    if (!currentUser.addresses) {
+        currentUser.addresses = [];
+    }
+
+    if (editIndex !== '') {
+        // Редактирование существующего адреса
+        currentUser.addresses[editIndex] = addressData;
+    } else {
+        // Добавление нового адреса
+        currentUser.addresses.push(addressData);
+    }
+
+    // Если это основной адрес, снимаем флаг с других адресов
+    if (addressData.isDefault) {
+        currentUser.addresses.forEach((addr, index) => {
+            if (index !== (editIndex !== '' ? parseInt(editIndex) : currentUser.addresses.length - 1)) {
+                addr.isDefault = false;
+            }
+        });
+    }
+
+    // Сохраняем в localStorage
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    
+    // Обновляем отображение
+    updateAddressesList();
+    
+    // Скрываем форму
+    cancelEditAddress();
+    
+    showNotification('Адрес успешно сохранен', 'success');
+}
+
+function editAddress(index) {
+    const address = currentUser.addresses[index];
+    
+    document.getElementById('address-form-container').style.display = 'block';
+    document.getElementById('address-form-title').textContent = 'Редактировать адрес';
+    document.getElementById('edit-address-index').value = index;
+    
+    // Заполняем форму данными
+    document.getElementById('address-name').value = address.name;
+    document.getElementById('address-country').value = address.country;
+    document.getElementById('address-city').value = address.city;
+    document.getElementById('address-street').value = address.street;
+    document.getElementById('address-house').value = address.house;
+    document.getElementById('address-apartment').value = address.apartment || '';
+    document.getElementById('address-zip').value = address.zip || '';
+    document.getElementById('address-phone').value = address.phone;
+    document.getElementById('address-default').checked = address.isDefault || false;
+    
+    // Прокрутка к форме
+    document.getElementById('address-form-container').scrollIntoView({ 
+        behavior: 'smooth' 
+    });
+}
+
+function deleteAddress(index) {
+    if (confirm('Вы уверены, что хотите удалить этот адрес?')) {
+        currentUser.addresses.splice(index, 1);
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+        updateAddressesList();
+        showNotification('Адрес удален', 'success');
+    }
+}
+
+function setDefaultAddress(index) {
+    currentUser.addresses.forEach((addr, i) => {
+        addr.isDefault = i === index;
+    });
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
+    updateAddressesList();
+    showNotification('Основной адрес изменен', 'success');
+}
+
+function updateAddressesList() {
+    const addressesList = document.getElementById('addresses-list');
+    
+    if (!currentUser.addresses || currentUser.addresses.length === 0) {
+        addressesList.innerHTML = `
+            <div class="empty-addresses">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Нет сохраненных адресов</h3>
+                <p>Добавьте адрес для быстрого оформления заказов</p>
+            </div>
+        `;
+        return;
+    }
+
+    let addressesHTML = '';
+    
+    currentUser.addresses.forEach((address, index) => {
+        addressesHTML += `
+            <div class="address-card ${address.isDefault ? 'default' : ''}">
+                <div class="address-header">
+                    <div class="address-title">${address.name}</div>
+                    ${address.isDefault ? '<span class="default-badge">Основной</span>' : ''}
+                </div>
+                <div class="address-details">
+                    <p>${address.country}, ${address.city}</p>
+                    <p>${address.street}, д. ${address.house}${address.apartment ? ', кв. ' + address.apartment : ''}</p>
+                    ${address.zip ? `<p>Индекс: ${address.zip}</p>` : ''}
+                    <p>📞 ${address.phone}</p>
+                </div>
+                <div class="address-actions">
+                    <button class="address-action-btn edit" onclick="editAddress(${index})">
+                        <i class="fas fa-edit"></i> Изменить
+                    </button>
+                    ${!address.isDefault ? `
+                        <button class="address-action-btn" onclick="setDefaultAddress(${index})">
+                            <i class="fas fa-star"></i> Сделать основным
+                        </button>
+                    ` : ''}
+                    <button class="address-action-btn delete" onclick="deleteAddress(${index})">
+                        <i class="fas fa-trash"></i> Удалить
+                    </button>
+                </div>
+            </div>
+        `;
+    });
+    
+    addressesList.innerHTML = addressesHTML;
+}
+
+// Обновленная функция загрузки данных пользователя
+function loadUserData() {
+    const savedUser = localStorage.getItem('currentUser');
+    if (savedUser) {
+        currentUser = JSON.parse(savedUser);
+        isLoggedIn = true;
+        
+        // Заполняем поля профиля сохраненными данными
+        document.getElementById('profile-name').textContent = currentUser.name;
+        document.getElementById('profile-email').textContent = currentUser.email;
+        document.getElementById('profile-firstname').value = currentUser.name.split(' ')[0] || currentUser.name;
+        document.getElementById('profile-lastname').value = currentUser.name.split(' ')[1] || '';
+        document.getElementById('profile-email').value = currentUser.email;
+        document.getElementById('profile-phone').value = currentUser.phone || '';
+        document.getElementById('profile-regdate').value = currentUser.registrationDate || '';
+        
+        // Загружаем заказы
+        const savedOrders = localStorage.getItem('userOrders');
+        if (savedOrders) {
+            userOrders = JSON.parse(savedOrders);
+        }
+        
+        updateAccountLink();
+        
+        // Обновляем список адресов при загрузке профиля
+        if (document.getElementById('addresses-section').classList.contains('active')) {
+            updateAddressesList();
+        }
+    }
+}
+
+// Обновленная функция показа раздела профиля
+function showProfileSection(sectionId) {
+    document.querySelectorAll('.profile-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId + '-section').classList.add('active');
+    
+    document.querySelectorAll('.profile-menu a').forEach(link => {
+        link.classList.remove('active');
+    });
+    event.target.classList.add('active');
+    
+    if (sectionId === 'orders') {
+        updateOrdersList();
+    } else if (sectionId === 'addresses') {
+        updateAddressesList();
+        cancelEditAddress(); // Скрываем форму при переключении
+    }
+}
+
+
+
+
+// Функция для очистки корзины
+function clearCart() {
+    if (cart.length === 0) {
+        showNotification('Корзина уже пуста', 'info');
+        return;
+    }
+    
+    if (confirm('Вы уверены, что хотите очистить корзину? Все товары будут удалены.')) {
+        // Анимация удаления всех товаров
+        const cartItems = document.querySelectorAll('.cart-item');
+        cartItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.classList.add('removing');
+            }, index * 100);
+        });
+        
+        // Очищаем корзину после анимации
+        setTimeout(() => {
+            cart = [];
+            updateCartCount();
+            updateCartDisplay();
+            showNotification('Корзина очищена', 'success');
+        }, cartItems.length * 100 + 300);
+    }
+}
+
+// Обновленная функция updateCartDisplay
+function updateCartDisplay() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartItemsCount = document.getElementById('cart-items-count');
+    const cartSubtotal = document.getElementById('cart-subtotal');
+    const cartShipping = document.getElementById('cart-shipping');
+    const cartTotal = document.getElementById('cart-total');
+    const clearCartBtn = document.getElementById('clear-cart-btn');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <div class="empty-cart-message">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Ваша корзина пуста</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">Добавьте товары из каталога</p>
+            </div>
+        `;
+        cartItemsCount.textContent = '0';
+        cartSubtotal.textContent = '0 ₽';
+        cartShipping.textContent = '0 ₽';
+        cartTotal.textContent = '0 ₽';
+        
+        // Скрываем кнопку очистки корзины
+        clearCartBtn.style.display = 'none';
+        
+        // Делаем кнопку оформления заказа неактивной
+        checkoutBtn.disabled = true;
+        return;
+    }
+    
+    let cartHTML = '';
+    let subtotal = 0;
+    
+    cart.forEach(item => {
+        subtotal += item.priceValue;
+        
+        cartHTML += `
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="cart-item-details">
+                    <h3>${item.name}</h3>
+                    <p>Размер: ${item.size}</p>
+                    <p class="cart-item-price">${item.price}</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
+                    </div>
+                    <div class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    // Calculate shipping (free for orders over 5000 rubles)
+    const shipping = subtotal > 5000 ? 0 : 500;
+    
+    cartItemsContainer.innerHTML = cartHTML;
+    cartItemsCount.textContent = cart.length;
+    cartSubtotal.textContent = subtotal.toLocaleString() + ' ₽';
+    cartShipping.textContent = shipping.toLocaleString() + ' ₽';
+    cartTotal.textContent = (subtotal + shipping).toLocaleString() + ' ₽';
+    
+    // Показываем кнопку очистки корзины
+    clearCartBtn.style.display = 'flex';
+    
+    // Активируем кнопку оформления заказа
+    checkoutBtn.disabled = false;
+}
+
+// Функции для управления количеством товаров
+function increaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity += 1;
+        updateCartDisplay();
+        showNotification(`Количество товара "${item.name}" увеличено`, 'success');
+    }
+}
+
+function decreaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item && item.quantity > 1) {
+        item.quantity -= 1;
+        updateCartDisplay();
+        showNotification(`Количество товара "${item.name}" уменьшено`, 'success');
+    } else if (item && item.quantity === 1) {
+        removeFromCart(productId);
+    }
+}
+
+// Обновленная функция addToCart для проверки дубликатов
+function addToCart(productId) {
+    const selectedSize = document.querySelector('#product-detail-' + productId + ' .size.selected');
+    if (!selectedSize) {
+        showNotification('Пожалуйста, выберите размер', 'error');
+        return;
+    }
+    
+    const product = products[productId];
+    const size = selectedSize.textContent;
+    
+    // Проверяем, есть ли уже такой товар в корзине
+    const existingItem = cart.find(item => 
+        item.name === product.name && item.size === size
+    );
+    
+    if (existingItem) {
+        // Увеличиваем количество существующего товара
+        existingItem.quantity += 1;
+        showNotification(`Количество товара "${product.name}" увеличено`, 'success');
+    } else {
+        // Добавляем новый товар
+        const cartProduct = {
+            id: Date.now(), // unique id for cart item
+            name: product.name,
+            price: product.price,
+            priceValue: product.priceValue,
+            size: size,
+            image: product.images[0],
+            quantity: 1
+        };
+        
+        cart.push(cartProduct);
+        showNotification('Товар добавлен в корзину!', 'success');
+    }
+    
+    updateCartCount();
+    updateCartDisplay();
+}
+
+// Обновленная функция removeFromCart с анимацией
+function removeFromCart(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (!item) return;
+    
+    // Находим элемент в DOM
+    const cartItemElement = document.querySelector(`.cart-item`);
+    if (cartItemElement) {
+        cartItemElement.classList.add('removing');
+    }
+    
+    setTimeout(() => {
+        cart = cart.filter(item => item.id !== productId);
+        updateCartCount();
+        updateCartDisplay();
+        showNotification(`Товар "${item.name}" удален из корзины`, 'success');
+    }, 300);
+}
+
+// Обновленная функция checkout
+function checkout() {
+    if (cart.length === 0) {
+        showNotification('Ваша корзина пуста', 'error');
+        return;
+    }
+    
+    if (!isLoggedIn) {
+        showNotification('Пожалуйста, войдите в систему для оформления заказа', 'error');
+        showPage('account');
+        return;
+    }
+    
+    // Проверяем, есть ли адреса доставки
+    if (!currentUser.addresses || currentUser.addresses.length === 0) {
+        showNotification('Пожалуйста, добавьте адрес доставки в личном кабинете', 'error');
+        showPage('account');
+        showProfileSection('addresses');
+        return;
+    }
+    
+    // Create order
+    const order = {
+        id: 'ORD' + Date.now(),
+        date: new Date().toLocaleDateString('ru-RU'),
+        items: [...cart],
+        subtotal: document.getElementById('cart-subtotal').textContent,
+        shipping: document.getElementById('cart-shipping').textContent,
+        total: document.getElementById('cart-total').textContent,
+        status: 'В обработке',
+        address: currentUser.addresses.find(addr => addr.isDefault) || currentUser.addresses[0]
+    };
+    
+    // Add to user's orders
+    userOrders.push(order);
+    
+    // Clear cart
+    cart = [];
+    updateCartCount();
+    updateCartDisplay();
+    
+    // Show success message
+    showNotification('Заказ успешно оформлен! Номер заказа: ' + order.id, 'success');
+    
+    // Update orders list if on profile page
+    if (document.getElementById('orders-section').classList.contains('active')) {
+        updateOrdersList();
+    }
+    
+    // Переходим в профиль на вкладку заказов
+    showPage('account');
+    showProfileSection('orders');
+}
+
+
+
+
+
+
+
+
+
+// Функции для управления количеством товаров с пересчетом цен
+function increaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item) {
+        item.quantity += 1;
+        updateCartDisplay();
+        showNotification(`Количество товара "${item.name}" увеличено`, 'success');
+    }
+}
+
+function decreaseQuantity(productId) {
+    const item = cart.find(item => item.id === productId);
+    if (item && item.quantity > 1) {
+        item.quantity -= 1;
+        updateCartDisplay();
+        showNotification(`Количество товара "${item.name}" уменьшено`, 'success');
+    } else if (item && item.quantity === 1) {
+        removeFromCart(productId);
+    }
+}
+
+// Обновленная функция updateCartDisplay с правильным расчетом стоимости
+function updateCartDisplay() {
+    const cartItemsContainer = document.getElementById('cart-items');
+    const cartItemsCount = document.getElementById('cart-items-count');
+    const cartSubtotal = document.getElementById('cart-subtotal');
+    const cartShipping = document.getElementById('cart-shipping');
+    const cartTotal = document.getElementById('cart-total');
+    const clearCartBtn = document.getElementById('clear-cart-btn');
+    const checkoutBtn = document.querySelector('.checkout-btn');
+    
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = `
+            <div class="empty-cart-message">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Ваша корзина пуста</p>
+                <p style="margin-top: 10px; font-size: 0.9em;">Добавьте товары из каталога</p>
+            </div>
+        `;
+        cartItemsCount.textContent = '0';
+        cartSubtotal.textContent = '0 ₽';
+        cartShipping.textContent = '0 ₽';
+        cartTotal.textContent = '0 ₽';
+        
+        // Скрываем кнопку очистки корзины
+        clearCartBtn.style.display = 'none';
+        
+        // Делаем кнопку оформления заказа неактивной
+        checkoutBtn.disabled = true;
+        return;
+    }
+    
+    let cartHTML = '';
+    let subtotal = 0;
+    let totalItemsCount = 0;
+    
+    cart.forEach(item => {
+        const itemTotal = item.priceValue * item.quantity;
+        subtotal += itemTotal;
+        totalItemsCount += item.quantity;
+        
+        cartHTML += `
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="${item.image}" alt="${item.name}">
+                </div>
+                <div class="cart-item-details">
+                    <h3>${item.name}</h3>
+                    <p>Размер: ${item.size}</p>
+                    <p class="cart-item-price">${item.priceValue.toLocaleString()} ₽ × ${item.quantity} = ${itemTotal.toLocaleString()} ₽</p>
+                </div>
+                <div class="cart-item-actions">
+                    <div class="quantity-controls">
+                        <button class="quantity-btn" onclick="decreaseQuantity(${item.id})">-</button>
+                        <span class="quantity">${item.quantity}</span>
+                        <button class="quantity-btn" onclick="increaseQuantity(${item.id})">+</button>
+                    </div>
+                    <div class="cart-item-remove" onclick="removeFromCart(${item.id})">
+                        <i class="fas fa-times"></i>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+    
+    // Calculate shipping (free for orders over 5000 rubles)
+    const shipping = subtotal > 5000 ? 0 : 500;
+    const total = subtotal + shipping;
+    
+    cartItemsContainer.innerHTML = cartHTML;
+    cartItemsCount.textContent = totalItemsCount;
+    cartSubtotal.textContent = subtotal.toLocaleString() + ' ₽';
+    cartShipping.textContent = shipping.toLocaleString() + ' ₽';
+    cartTotal.textContent = total.toLocaleString() + ' ₽';
+    
+    // Обновляем счетчик товаров в хедере
+    updateCartCount();
+    
+    // Показываем кнопку очистки корзины
+    clearCartBtn.style.display = 'flex';
+    
+    // Активируем кнопку оформления заказа
+    checkoutBtn.disabled = false;
+}
+
+// Обновленная функция updateCartCount для учета количества товаров
+function updateCartCount() {
+    let totalCount = 0;
+    cart.forEach(item => {
+        totalCount += item.quantity;
+    });
+    cartCount.textContent = totalCount;
+}
+
+// Обновленная функция addToCart для проверки дубликатов
+function addToCart(productId) {
+    const selectedSize = document.querySelector('#product-detail-' + productId + ' .size.selected');
+    if (!selectedSize) {
+        showNotification('Пожалуйста, выберите размер', 'error');
+        return;
+    }
+    
+    const product = products[productId];
+    const size = selectedSize.textContent;
+    
+    // Проверяем, есть ли уже такой товар в корзине
+    const existingItem = cart.find(item => 
+        item.name === product.name && item.size === size
+    );
+    
+    if (existingItem) {
+        // Увеличиваем количество существующего товара
+        existingItem.quantity += 1;
+        showNotification(`Количество товара "${product.name}" увеличено`, 'success');
+    } else {
+        // Добавляем новый товар
+        const cartProduct = {
+            id: Date.now(), // unique id for cart item
+            name: product.name,
+            price: product.price,
+            priceValue: product.priceValue,
+            size: size,
+            image: product.images[0],
+            quantity: 1
+        };
+        
+        cart.push(cartProduct);
+        showNotification('Товар добавлен в корзину!', 'success');
+    }
+    
+    updateCartDisplay();
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
